@@ -6,4 +6,4 @@ var runningChance = 35;
 var sillyRunChance = 25;
 var horizontalPatternChance = 25;
 var verticalPatternChance = 25;
-var tammedChance = 20;
+var tammedChance = 5;
