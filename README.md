@@ -2,27 +2,27 @@
 
 
 <p float="left">
-  <img src="/docs/cretins1.jpg" />
-  <img src="/docs/cretins2.jpg" /> 
-  <img src="/docs/cretins3.jpg" />
-  <img src="/docs/cretins10.jpg" />
-  <img src="/docs/cretins11.png" />
+  <img src="/docs/cretins1.jpg" width="19%" />
+  <img src="/docs/cretins2.jpg" width="19%" /> 
+  <img src="/docs/cretins3.jpg" width="19%" />
+  <img src="/docs/cretins10.jpg" width="19%" />
+  <img src="/docs/cretins11.png" width="19%" />
 </p>
 
 <p float="left">
-  <img src="/docs/cretins4.jpg" width="190" />
-  <img src="/docs/cretins5.jpg" width="190" /> 
-  <img src="/docs/cretins6.png" width="190" />
-  <img src="/docs/cretins12.jpg" width="190" />
-  <img src="/docs/cretins13.jpg" width="190" />
+  <img src="/docs/cretins4.jpg" width="19%" />
+  <img src="/docs/cretins5.jpg" width="19%" /> 
+  <img src="/docs/cretins6.png" width="19%" />
+  <img src="/docs/cretins12.jpg" width="19%" />
+  <img src="/docs/cretins13.jpg" width="19%" />
 </p>
 
 <p float="left">
-  <img src="/docs/cretins7.jpg" width="190" />
-  <img src="/docs/cretins8.png" width="190" /> 
-  <img src="/docs/cretins9.png" width="190" />
-  <img src="/docs/cretins14.jpg" width="190" />
-  <img src="/docs/cretins15.jpg" width="190" />
+  <img src="/docs/cretins7.jpg" width="19%" />
+  <img src="/docs/cretins8.png" width="19%" /> 
+  <img src="/docs/cretins9.png" width="19%" />
+  <img src="/docs/cretins14.jpg" width="19%" />
+  <img src="/docs/cretins15.jpg" width="19%" />
 </p>
 
 *Degenerates are lazy and stubborn creatures that lurk on the hidden part of your computer feeding on personal data. 
