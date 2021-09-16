@@ -1,7 +1,34 @@
 # Generative NFTs
 
+
+<p float="left">
+  <img src="/docs/cretins1.jpg" width="190" />
+  <img src="/docs/cretins2.jpg" width="190" /> 
+  <img src="/docs/cretins3.jpg" width="190" />
+  <img src="/docs/cretins10.jpg" width="190" />
+  <img src="/docs/cretins11.png" width="190" />
+</p>
+
+<p float="left">
+  <img src="/docs/cretins4.jpg" width="190" />
+  <img src="/docs/cretins5.jpg" width="190" /> 
+  <img src="/docs/cretins6.png" width="190" />
+  <img src="/docs/cretins12.jpg" width="190" />
+  <img src="/docs/cretins13.jpg" width="190" />
+</p>
+
+<p float="left">
+  <img src="/docs/cretins7.jpg" width="190" />
+  <img src="/docs/cretins8.png" width="190" /> 
+  <img src="/docs/cretins9.png" width="190" />
+  <img src="/docs/cretins14.jpg" width="190" />
+  <img src="/docs/cretins15.jpg" width="190" />
+</p>
+
 *Degenerates are lazy and stubborn creatures that lurk on the hidden part of your computer feeding on personal data. 
 They often reveal themselves in search of data when none is around.*
+
+## Introduction
 
 This is an Illustrator script that generates 31 by 31 pixels images with a dinosaur in the shape of the character from the built-in Dinosaur Game on the Chrome web browser. 
 The script is based on JS's older ES3 standards so a lot of things are somewhat outdated or redundant at times. 
@@ -20,7 +47,7 @@ You will need to restart Illustrator after making the changes.
 
 Running the script outside of Illustrator via `index_alias.js` will avoid its potential deletion when updating Illustrator. 
 
-Once done, open `template.ai` and run the 'index_alias' under **File > Scripts** and Voilà!
+Once done, open `template.ai` and run the 'index_alias' under **File > Scripts** and Voilà! (currently not available due to copy rights)
 
 ## Character generation
 
@@ -71,24 +98,11 @@ When tammed, the dinosaur will wear either a scraf or a ribbon:
 
 For both eyes and scarfs, any number can be added or modified within the `eyes` and `scarf` layers respectively.
 
-# Final product
+## Improvements
 
-<p float="left">
-  <img src="/docs/cretins1.png" width="200" />
-  <img src="/docs/cretins2.png" width="200" /> 
-  <img src="/docs/cretins3.png" width="200" />
-</p>
+While the final image is of high enough quality, it's not pixel perfect due to the required anti-aliasing applied on the export. 
+To remedy this, an aditional script needs to be created in order to convert the output png into a mozaic object and exported once more.
 
-<p float="left">
-  <img src="/docs/cretins4.png" width="200" />
-  <img src="/docs/cretins5.png" width="200" /> 
-  <img src="/docs/cretins6.png" width="200" />
-</p>
+## Additional
 
-<p float="left">
-  <img src="/docs/cretins7.png" width="200" />
-  <img src="/docs/cretins8.png" width="200" /> 
-  <img src="/docs/cretins9.png" width="200" />
-</p>
-
-# Thanks for reading!
+Slug naming can be enalbed in the `ExportCanvas` function under `utils.js`.
