@@ -2,11 +2,11 @@
 
 
 <p float="left">
-  <img src="/docs/cretins1.jpg" width="190" />
-  <img src="/docs/cretins2.jpg" width="190" /> 
-  <img src="/docs/cretins3.jpg" width="190" />
-  <img src="/docs/cretins10.jpg" width="190" />
-  <img src="/docs/cretins11.png" width="190" />
+  <img src="/docs/cretins1.jpg" />
+  <img src="/docs/cretins2.jpg" /> 
+  <img src="/docs/cretins3.jpg" />
+  <img src="/docs/cretins10.jpg" />
+  <img src="/docs/cretins11.png" />
 </p>
 
 <p float="left">
