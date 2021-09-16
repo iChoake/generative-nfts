@@ -11,12 +11,15 @@ var leftFoot = 50 / 100;
 var scarfChance = tammedChance / 100;
 
 function IsFlipped() {
+    return true;
     return Math.random(100) <= flipped;
 }
 
 function GetPose() {
     const rand = Math.random(100);
     
+    return 'pose2'
+
     if (rand < leaning) 
         return 'pose3'; 
     else if (rand < observing) 
@@ -28,6 +31,7 @@ function GetPose() {
 function GetMouth() {
     const rand = Math.random(100);
     
+    return 'jaw_normal';
     if (rand < roar) 
         return 'jaw_roar';
     else if (rand < mouthClosed) 
