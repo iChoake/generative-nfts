@@ -87,14 +87,10 @@ The pattern porbabilities can also be changed in the `params.js`.
 
 ## Eyes and garnish
 
-1 of the 38 available eyes is selected at random and copied ontop of the character: 
-
-<img src="/docs/eyes.png" width="200" />
+1 of the 38 available eyes is selected at random and copied ontop of the character.
 
 Also, to make things a little more intersting, there is a 5% chance that the dinosaur is *tammed*. 
-When tammed, the dinosaur will wear either a scraf or a ribbon:
-
-<img src="/docs/scarfs.png" width="200" />
+When tammed, the dinosaur will wear either a scraf or a ribbon.
 
 For both eyes and scarfs, any number can be added or modified within the `eyes` and `scarf` layers respectively.
 
