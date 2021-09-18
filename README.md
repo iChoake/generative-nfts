@@ -25,7 +25,7 @@
   <img src="/docs/cretins15.jpg" width="19%" />
 </p>
 
-*Crétins are lazy and stubborn creatures that lurk on the hidden part of your computer feeding on personal data. 
+*Degenerates are lazy and stubborn creatures that lurk on the hidden part of your computer feeding on personal data. 
 They often reveal themselves in search of data when none is around.*
 
 ## Introduction
