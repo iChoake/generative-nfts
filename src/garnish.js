@@ -1,10 +1,8 @@
 #include character.js
 
 function AddGarnish(traits) {  
-    const scarfRand = Math.random();
-
-    GenerateEyes(traits);
     if (traits.scarfState && traits.poseState != 'pose3') GenerateTaming(traits);
+    return GenerateEyes(traits);
 }
 
 function GenerateEyes(traits) {
@@ -20,13 +18,15 @@ function GenerateEyes(traits) {
     eyesLayerItems[eyeIndex].selected = true;
     DuplicateItems(outputLayer.eyes);
     
-    const eye = outputLayer.eyes.groupItems.eyeBP; 
+    const eye = outputLayer.eyes.groupItems[0]; 
     eye.position = referencePoint.position;
     referencePoint.remove(); 
     
-    if (traits.flipState) ReflectItems(outputLayer.eyes.groupItems.eyeBP.pathItems);
+    if (traits.flipState) ReflectItems(outputLayer.eyes.groupItems[0].pathItems);
 
     ChangeIrisColor(eye.pathItems);
+
+    return outputLayer.eyes.groupItems[0].name;
 }
 
 function ChangeIrisColor(items) {

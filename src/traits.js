@@ -1,14 +1,46 @@
 #include params.js
 
 var roar = roaringChance / 100;   
-var mouthClosed = (roaringChance + shutMouthChance )/ 100;   
+var mouthClosed = (roaringChance + shutMouthChance )/ 100;  
+var openedMouth = openedMouthChance / 100; 
 var leaning = leaningForwardChance / 100;
 var observing = (leaningForwardChance + observingBehindChance) / 100; 
 var running = runningChance / 100;
+var isImmobile = isImmobileChance / 100;
+var standing = standingChance / 100;
 var sillyRunning = (runningChance + sillyRunChance) / 100;
 var flipped = 50 / 100;    
 var leftFoot = 50 / 100;  
-var scarfChance = tammedChance / 100;
+var tammed = tammedChance / 100;
+var notTammed = notTammedChance / 100;
+var isEgg = isEggChance / 100;
+var isSin = isSinChance / 100;
+var isCookie = (isSinChance + isCookieChance) / 100;
+var isVert = (isSinChance + isCookieChance + isVertChance) / 100;
+var isHori = (isSinChance + isCookieChance + isVertChance + isHoriChance) / 100;
+
+function ChooseTraits() {
+    const flipState = IsFlipped();
+    const poseState = GetPose();
+    const mouthState = GetMouth();
+    const legsState = GetLegs();
+    const scarfState = GetScarf();
+    const pattern = GetPattern();
+
+    return {
+        flipState: flipState,
+        legsState: legsState[0],
+        poseState: poseState[0],
+        mouthState: mouthState[0],
+        scarfState: scarfState[0],
+        pattern: pattern[0],
+        poseStateChance: poseState[1],
+        legStateChance: legsState[1],
+        mouthStateChance: mouthState[1],
+        tammedChance: scarfState[1],
+        patternChance: pattern[1]
+    }
+} 
 
 function IsFlipped() {
     return Math.random(100) <= flipped;
@@ -17,44 +49,42 @@ function IsFlipped() {
 function GetPose() {
     const rand = Math.random(100);
     
-    if (rand < leaning) 
-        return 'pose3'; 
-    else if (rand < observing) 
-        return 'pose2';
-    else 
-        return 'pose1';
+    if (rand < leaning) return ['pose3', leaningForwardChance]; 
+    else if (rand < observing) return ['pose2', observingBehindChance];
+    else return ['pose1', standingChance];
 }
 
 function GetMouth() {
     const rand = Math.random(100);
     
-    if (rand < roar) 
-        return 'jaw_roar';
-    else if (rand < mouthClosed) 
-        return 'jaw_closed'; 
-    else 
-        return 'jaw_normal'; 
+    if (rand < roar) return ['jaw_roar', roaringChance];
+    else if (rand < mouthClosed) return ['jaw_closed', shutMouthChance]; 
+    else return ['jaw_normal', openedMouthChance]; 
 }
 
 function GetLegs() {
-    const isLeftRand = Math.random(100);
-    const isRunningRand = Math.random(100);
-    const isSillyRunningRand = Math.random(100);
-
-    const isLeft = isLeftRand <= leftFoot;
-    const isRunning = isRunningRand <= running;
-    const isSillyRunning = isSillyRunningRand <= sillyRunning;
+    const rand = Math.random(100);
+    const isLeft = rand <= leftFoot;
+    const isRunning = rand <= running;
+    const isSillyRunning = rand <= sillyRunning;
     
-    if (isRunning && isLeft) 
-        return ['left_running', 'right_standing']
-    else if (isRunning && !isLeft)
-        return ['left_standing', 'right_running']
-    else if (isSillyRunning && isLeft)
-        return ['left_silly_running', 'right_standing']
-    else if (!isRunning)
-        return ['left_standing', 'right_standing']
+    if (isRunning && isLeft) return [['left_running', 'right_standing'], runningChance];
+    else if (isRunning && !isLeft) return [['left_standing', 'right_running'], runningChance];
+    else if (isSillyRunning && isLeft) return [['left_silly_running', 'right_standing'], sillyRunChance];
+    else if (!isRunning) return [['left_standing', 'right_standing'], isImmobileChance];
 }
 
 function GetScarf() {
-    return Math.random(100) <= scarfChance;
+    if (Math.random(100) <= tammed) return [true, tammedChance];
+    else return [false, notTammedChance];
+}
+
+function GetPattern() {
+    const rand = Math.random(100);
+
+    if (isSin >= rand) return ['sin', isSinChance];
+    else if (isCookie >= rand) return ['cookie', isCookieChance];
+    else if (isVert >= rand) return ['vertical', isVertChance];
+    else if (isHori >= rand) return ['horizontal', isHoriChance];
+    else return ['egg', isEggChance];
 }

@@ -1,31 +1,25 @@
 #include params.js
 #include utils.js
 
-const horizontalProbability = horizontalPatternChance/100;
-const verticalProbability = (verticalPatternChance+horizontalPatternChance)/100;
-
 const box = app.activeDocument.width/1.5;
 const offset = Math.round((app.activeDocument.width - box)/2);
 
-function GeneratePatterns() {
+function GeneratePatterns(traits) {
     doc.layers.output.groupItems.add().name = 'texture';    
     const textureLayer = doc.layers.output.groupItems.texture;
+    var probRe = 0.5;
 
-    const dice = Math.random();
-    const repeatProb = Math.random();
+    if (traits.pattern == 'egg') var patternCount = DoOnceOrMore(GenerateEgg, probRe, patternCount, textureLayer);
+    if (traits.pattern == 'vertical') var patternCount = DoOnceOrMore(GenerateRectangleVertical, probRe, patternCount, textureLayer);
+    if (traits.pattern == 'horizontal') var patternCount = DoOnceOrMore(GenerateRectangleHorizontal, probRe, patternCount, textureLayer);
+    if (traits.pattern == 'sin') var patternCount = DoOnceOrMore(GenerateSinPattern, probRe, patternCount, textureLayer);
+    if (traits.pattern == 'cookie') var patternCount = DoOnceOrMore(GenerateCookie, probRe, patternCount, textureLayer);
 
-    // if (dice < horizontalProbability)
-    //     DoOnceOrMore(GenerateRectangleHorizontal, repeatProb, textureLayer);
-    // else if (dice < verticalProbability)
-    //     DoOnceOrMore(GenerateRectangleVertical, repeatProb, textureLayer);
-    // else
-    //     DoOnceOrMore(GenerateRectangle, repeatProb, textureLayer);
-    // }
-    
-    DoOnceOrMore(GenerateRectangle, 0.1, textureLayer);
+    return Math.pow(probRe, patternCount);
 }
 
-function GenerateRectangle(textureLayer) {
+
+function GenerateEgg(textureLayer) {
     var color = GenerateColor();
     var numOfSpots = Math.floor(Math.random() * 120) + 45;
     var spotSize = Math.floor(Math.random() * 5) + 1;
@@ -81,22 +75,6 @@ function GenerateCookie(textureLayer) {
         var y = (Math.round(Math.random() * box))+offset;
         rect = textureLayer.pathItems.rectangle(x, y, 1, 1);
         rect.fillColor = color;
-    }
-}
-
-function GenerateEgg(textureLayer) {
-    var color = GenerateColor();
-    var spotSize = Math.floor(Math.random() * 1) + 3;
-    var numOfSpots = Math.floor(Math.random() * 5) + 15;
-
-    for (var i = 0; i < numOfSpots; i++) {
-        var x = Math.round(Math.random() * -box)-offset;
-        var y = Math.round(Math.random() * box)+offset;
-        var side = Math.round(Math.random() * spotSize);
-        if (side != 0) {
-            rect = textureLayer.pathItems.rectangle(x, y, side, side);
-            rect.fillColor = color;
-        }
     }
 }
 

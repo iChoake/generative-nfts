@@ -11,22 +11,6 @@ function ExportCanvas(index) {
     doc.imageCapture(destFile, artboard.artboardRect, options);
 }
 
-function ChooseTraits() {
-    const flipState = IsFlipped();
-    const poseState = GetPose();
-    const mouthState = GetMouth();
-    const legsState = GetLegs();
-    const scarfState = GetScarf();
-
-    return {
-        flipState: flipState,
-        poseState: poseState,
-        mouthState: mouthState,
-        legsState: legsState,
-        scarfState: scarfState
-    }
-} 
-
 function GenerateName() { // <--- loop thru arguments to generate strings with structure (ex: adj, nn, adj...)
     const index = Math.floor(Math.random() * noun.length);
     const nn = noun[index].word;
@@ -114,9 +98,12 @@ function ResetLayer(target) {
 }
 
 // accepts a function, a repeatition probability, and the appropriate function's arguments
-function DoOnceOrMore(funct, prob, args) {
+function DoOnceOrMore(funct, prob, count, args) {
+    count = count || 1;    
     funct(args);
     
     if (Math.random() < prob)
-        DoOnceOrMore(funct, prob, args);
+        return DoOnceOrMore(funct, prob, count + 1, args);
+
+    return count;
 }

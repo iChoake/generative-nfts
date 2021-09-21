@@ -1,6 +1,5 @@
 # Generative NFTs
 
-
 <p float="left">
   <img src="/docs/cretins1.jpg" width="19%" />
   <img src="/docs/cretins2.jpg" width="19%" /> 
@@ -60,7 +59,10 @@ First, a character silhouette is generated based on a set of traits including po
 </p>
 
 Some traits are rarer than others. For exemple roaring has only a 7.5% of occuring while a running character has 50%...
-The probabilities can be altered in `params.js`.
+Some traits have a greater impact on rarity than others too. 
+For exemple, the pattern of the character has 4 times greater impact than the expression of the character.
+To simplify things, traits are categorized as either *weak*, *moderate*, or *strong*.
+The probabilities and impact factors can be altered in `params.js`.
 
 ## Base color and shading
 
