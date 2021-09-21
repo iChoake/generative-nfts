@@ -15,7 +15,7 @@ function GeneratePatterns(traits) {
     if (traits.pattern == 'sin') var patternCount = DoOnceOrMore(GenerateSinPattern, probRe, patternCount, textureLayer);
     if (traits.pattern == 'cookie') var patternCount = DoOnceOrMore(GenerateCookie, probRe, patternCount, textureLayer);
 
-    return Math.pow(probRe, patternCount);
+    return patternCount;
 }
 
 

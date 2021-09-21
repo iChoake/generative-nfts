@@ -43,11 +43,11 @@ function ChooseTraits() {
 } 
 
 function IsFlipped() {
-    return Math.random(100) <= flipped;
+    return Math.random() <= flipped;
 }
 
 function GetPose() {
-    const rand = Math.random(100);
+    const rand = Math.random();
     
     if (rand < leaning) return ['pose3', leaningForwardChance]; 
     else if (rand < observing) return ['pose2', observingBehindChance];
@@ -55,7 +55,7 @@ function GetPose() {
 }
 
 function GetMouth() {
-    const rand = Math.random(100);
+    const rand = Math.random();
     
     if (rand < roar) return ['jaw_roar', roaringChance];
     else if (rand < mouthClosed) return ['jaw_closed', shutMouthChance]; 
@@ -63,7 +63,7 @@ function GetMouth() {
 }
 
 function GetLegs() {
-    const rand = Math.random(100);
+    const rand = Math.random();
     const isLeft = rand <= leftFoot;
     const isRunning = rand <= running;
     const isSillyRunning = rand <= sillyRunning;
@@ -75,12 +75,12 @@ function GetLegs() {
 }
 
 function GetScarf() {
-    if (Math.random(100) <= tammed) return [true, tammedChance];
+    if (Math.random() <= tammed) return [true, tammedChance];
     else return [false, notTammedChance];
 }
 
 function GetPattern() {
-    const rand = Math.random(100);
+    const rand = Math.random();
 
     if (isSin >= rand) return ['sin', isSinChance];
     else if (isCookie >= rand) return ['cookie', isCookieChance];
