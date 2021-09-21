@@ -7,7 +7,7 @@ const offset = Math.round((app.activeDocument.width - box)/2);
 function GeneratePatterns(traits) {
     doc.layers.output.groupItems.add().name = 'texture';    
     const textureLayer = doc.layers.output.groupItems.texture;
-    var probRe = 0.5;
+    var probRe = 10;
 
     if (traits.pattern == 'egg') var patternCount = DoOnceOrMore(GenerateEgg, probRe, patternCount, textureLayer);
     if (traits.pattern == 'vertical') var patternCount = DoOnceOrMore(GenerateRectangleVertical, probRe, patternCount, textureLayer);
