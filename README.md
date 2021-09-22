@@ -103,4 +103,5 @@ To remedy this, an aditional script needs to be created in order to convert the 
 
 ## Additional
 
-Slug naming can be enalbed in the `ExportCanvas` function under `utils.js`.
+Slug naming can be enalbed in the `ExportCanvas` function under `utils.js`. 
+Also, this script uses Chirag Mehta's Name-That_color library: http://chir.ag/projects/ntc.

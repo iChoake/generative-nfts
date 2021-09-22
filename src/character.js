@@ -10,6 +10,8 @@ function GenerateCharacter(traits) {
     MergeItems(layers.outputLayer, 'character');
     ColorItems(layers.outputLayer.groupItems.character, color); 
     GenerateShades(layers, traits);
+    
+    return color;
 }
 
 function SelectBodyParts(layers) {

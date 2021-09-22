@@ -2,29 +2,12 @@
 
 function ExportCanvas(index) {
     const artboard = doc.artboards[0];
-    const popcornName = GenerateName();
-    const destFile = new File('~/Desktop/popcorns/_' + popcornName + '.jpg');
+    const destFile = new File('~/Desktop/popcorns/' + 'something' + '.png');
     const options = new ImageCaptureOptions();
     options.artBoardClipping = true;
     options.resolution = 1500;
     options.antiAliasing = true;
     doc.imageCapture(destFile, artboard.artboardRect, options);
-}
-
-function GenerateName() { // <--- loop thru arguments to generate strings with structure (ex: adj, nn, adj...)
-    const index = Math.floor(Math.random() * noun.length);
-    const nn = noun[index].word;
-    const adj = '';
-    
-    while (adj == '') {
-        var index = Math.floor(Math.random() * adjective.length);
-        var random = adjective[index];
-        
-        if (random.categories != 'quantity' || random.categories != 'color')
-            adj = random.word;
-    }
-        
-    return adj + ' ' + nn;
 }
 
 function ClipCharacToTexture() {
