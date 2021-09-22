@@ -102,7 +102,7 @@ function DoOnceOrMore(funct, prob, count, args) {
     count = count || 1;    
     funct(args);
     
-    if (Math.random(100) < prob)
+    if (Math.random() < prob)
         return DoOnceOrMore(funct, prob, count + 1, args);
 
     return count;

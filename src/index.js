@@ -13,19 +13,18 @@ function Run() {
     doc.layers.pose.opacity = 0;
 
     const iterations = 1;  
-    const allChance = [];
 
     for (var i = 0; i < iterations; i++) {
         var traits = ChooseTraits();
         ResetLayer('output');
         ResetLayer('overlay');
         GenerateCharacter(traits);
-        var spotsChance = GeneratePatterns(traits);
+        var spotCount = GeneratePatterns(traits);
         ClipCharacToTexture();
         var eyeExpression = AddGarnish(traits);
-        var rarity = GetRarity(traits);
-        allChance.push(rarity);
+        var rarity = GetRarity(traits, spotCount);
         // ExportCanvas(iterations);
     }
-    alert([allChance])
+
+    alert(rarity)
 }
