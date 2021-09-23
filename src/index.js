@@ -29,7 +29,7 @@ function Run() {
     }
 
 	const textFile = File('~/Desktop/export/export_stats.csv');  
-    var content =  ['id', 'name', 'rarity', 'color', 'expression', 'pattern', 'running', 'pose', 'mouth', 'tammed'] + '\r';
+    var content =  ['id', 'name', 'rarity', 'color', 'expression', 'pattern', 'running', 'pose', 'mouth', 'tamed'] + '\r';
 	
 	for (var i = 0; i < stats_list.length; i++)  {
 		content += stats_list[i] + '\r';  

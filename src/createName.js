@@ -23,10 +23,10 @@ function GetCharStats(traits, spots, color, eye) {
     else if (traits.mouthState == 'jaw_roar') additionalTraits.push('Roaring');
     
     // tammed?
-    if (traits.scarfState) additionalTraits.push('Tammed');
-    else additionalTraits.push('Untammed')
+    if (traits.scarfState) additionalTraits.push('Tamed');
+    else additionalTraits.push('Untamed')
 
-    // name, rarity, color, expression, pattern, running, pose, mouth, tammed
+    // name, rarity, color, expression, pattern, running, pose, mouth, tamed
     return [fullName, rarity, colorName, expression, traits.pattern, additionalTraits];
 }
 
