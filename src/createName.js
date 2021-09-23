@@ -8,23 +8,25 @@ function GetCharStats(traits, spots, color, eye) {
 
     const additionalTraits = [];
 
+    // running
     if (traits.legsState[0] == 'left_silly_running' || traits.legsState[0] == 'left_running' || traits.legsState[1] == 'right_running') additionalTraits.push('Running');
     else additionalTraits.push('Standing');
     
-    if (traits.legsState[0] == 'left_silly_running') additionalTraits.push('Silly running');
-    else additionalTraits.push('Not silly running');
-    
-    if (traits.poseState == 'pose1') additionalTraits.push('Idle');
+    // pose
+    if (traits.poseState == 'pose1') additionalTraits.push('Looking fowards');
     else if (traits.poseState == 'pose2') additionalTraits.push('Looking back');
     else if (traits.poseState == 'pose3') additionalTraits.push('Hunting');
     
+    // mouth
     if (traits.mouthState == 'jaw_closed') additionalTraits.push('Closed mouth');
     else if (traits.mouthState == 'jaw_normal') additionalTraits.push('Opened mouth');
     else if (traits.mouthState == 'jaw_roar') additionalTraits.push('Roaring');
     
+    // tammed?
     if (traits.scarfState) additionalTraits.push('Tammed');
     else additionalTraits.push('Untammed')
 
+    // name, rarity, color, expression, pattern, running, pose, mouth, tammed
     return [fullName, rarity, colorName, expression, traits.pattern, additionalTraits];
 }
 
@@ -160,7 +162,7 @@ function GetRarity(traits, spots) {
     if (traits.pattern == 'sin' && traits.scarfState && spots > 2) return 'Epic';
     else if ((traits.pattern == 'Sin pattern' && traits.scarfState) || (spots > 2 && traits.scarfState) || (spots > 2 && traits.pattern == 'Sin pattern')) return 'Legendary';
     else if (traits.pattern == 'Sin pattern' || traits.scarfState || spots == 'None') return 'Very Rare';
-    else if (traits.mouthState == 'jaw_roar') return 'Rare';
+    else if (traits.mouthState == 'jaw_roar' || spots > 1) return 'Rare';
     else if (spots > 1) return 'Uncommon';
     else return 'Common';
 }
