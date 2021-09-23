@@ -163,7 +163,7 @@ function GetRarity(traits, spots) {
     else if ((traits.pattern == 'Sin pattern' && traits.scarfState) || (spots > 2 && traits.scarfState) || (spots > 2 && traits.pattern == 'Sin pattern')) return 'Legendary';
     else if (traits.pattern == 'Sin pattern' || traits.scarfState || spots == 'None') return 'Very Rare';
     else if (spots > 1) return 'Rare';
-    else if (traits.mouthState == 'jaw_roar') return 'Uncommon';
+    else if (traits.mouthState == 'jaw_roar' || traits.legsState[0] == 'left_silly_running') return 'Uncommon';
     else return 'Common';
 }
 
