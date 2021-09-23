@@ -28,7 +28,7 @@ function Run() {
         ExportCanvas(i+1, stats);
     }
 
-	const textFile = File('~/Desktop/export_stats.csv');  
+	const textFile = File('~/Desktop/export/export_stats.csv');  
     var content =  ['id', 'name', 'rarity', 'color', 'expression', 'pattern', 'running', 'pose', 'mouth', 'tammed'] + '\r';
 	
 	for (var i = 0; i < stats_list.length; i++)  {
