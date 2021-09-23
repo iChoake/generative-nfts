@@ -33,12 +33,7 @@ function ChooseTraits() {
         poseState: poseState[0],
         mouthState: mouthState[0],
         scarfState: scarfState[0],
-        pattern: pattern[0],
-        poseStateChance: poseState[1],
-        legStateChance: legsState[1],
-        mouthStateChance: mouthState[1],
-        tammedChance: scarfState[1],
-        patternChance: pattern[1]
+        pattern: pattern[0]
     }
 } 
 
@@ -86,5 +81,6 @@ function GetPattern() {
     else if (isCookie >= rand) return ['cookie', isCookieChance];
     else if (isVert >= rand) return ['vertical', isVertChance];
     else if (isHori >= rand) return ['horizontal', isHoriChance];
+    else if (rand < 0.025) return ['none', 0.025];
     else return ['egg', isEggChance];
 }

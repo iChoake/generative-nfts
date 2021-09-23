@@ -14,15 +14,15 @@ var sillyRunChance = 25;
 var isImmobileChance = 40;
 
 // tamming
-var tammedChance = 5;
-var notTammedChance = 95;
+var tammedChance = 2.5;
+var notTammedChance = 97.5;
 
 // pattern
-var isSinChance = 5;
+var isSinChance = 2.5;
 var isCookieChance = 15;
 var isVertChance = 20;
 var isHoriChance = 20;
-var isEggChance = 40;
+var isEggChance = 42.5;
 
 // impact factor
 var weakFactor = 1;

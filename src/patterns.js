@@ -9,6 +9,7 @@ function GeneratePatterns(traits) {
     const textureLayer = doc.layers.output.groupItems.texture;
     var probRe = 0.1;
 
+    if (traits.pattern == 'none') return patternCount;
     if (traits.pattern == 'egg') var patternCount = DoOnceOrMore(GenerateEgg, probRe, patternCount, textureLayer);
     if (traits.pattern == 'vertical') var patternCount = DoOnceOrMore(GenerateRectangleVertical, probRe, patternCount, textureLayer);
     if (traits.pattern == 'horizontal') var patternCount = DoOnceOrMore(GenerateRectangleHorizontal, probRe, patternCount, textureLayer);

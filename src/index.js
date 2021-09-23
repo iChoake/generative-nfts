@@ -12,7 +12,7 @@ function Run() {
     // doc.layers.shades.opacity = 0;
     // doc.layers.pose.opacity = 0;
 
-    const iterations = 1;  
+    const iterations = 10;  
 
     for (var i = 0; i < iterations; i++) {
         var traits = ChooseTraits();
@@ -23,7 +23,6 @@ function Run() {
         ClipCharacToTexture();
         var eyeExpression = AddGarnish(traits);
         var name = CreateName(traits, spotCount, color, eyeExpression);
-
         // ExportCanvas(iterations);
     }
 }

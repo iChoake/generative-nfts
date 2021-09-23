@@ -24,7 +24,7 @@
   <img src="/docs/cretins15.jpg" width="19%" />
 </p>
 
-*Degenerates are lazy and stubborn creatures that lurk on the hidden part of your computer feeding on personal data. 
+*Degenerates are lazy and stubborn creatures of low intellect that lurk on the hidden part of your computer feeding on personal data. 
 They often reveal themselves in search of data when none is around.*
 
 ## Introduction
@@ -96,12 +96,16 @@ When tammed, the dinosaur will wear either a scraf or a ribbon.
 
 For both eyes and scarfs, any number can be added or modified within the `eyes` and `scarf` layers respectively.
 
+## Naming
+
+The name of each Degenerates is contructed of an adjective or verb followed by a color name.
+The adjective or verb depends on the combination of traits.
+
 ## Improvements
 
 While the final image is of high enough quality, it's not pixel perfect due to the required anti-aliasing applied on the export. 
-To remedy this, an aditional script needs to be created in order to convert the output png into a mozaic object and exported once more.
+To remedy this, an aditional script needs to be created in order to convert the output png into a 31 by 31 pixel mozaic object and exported once more.
 
 ## Additional
 
-Slug naming can be enalbed in the `ExportCanvas` function under `utils.js`. 
-Also, this script uses Chirag Mehta's Name-That_color library: http://chir.ag/projects/ntc.
+Also, this script uses Chirag Mehta's name-that-color library to generate names: http://chir.ag/projects/ntc.
