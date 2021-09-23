@@ -2,7 +2,7 @@
 
 function ExportCanvas(index, stats) {
     const artboard = doc.artboards[0];
-    const destFile = new File('~/Desktop/final/' + index + ',' + stats + '.png');
+    const destFile = new File('~/Desktop/export/' + index + ',' + stats + '.png');
     const options = new ImageCaptureOptions();
     options.artBoardClipping = true;
     options.resolution = 1500;
