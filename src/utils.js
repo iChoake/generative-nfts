@@ -1,8 +1,8 @@
 #include traits.js
 
-function ExportCanvas(index) {
+function ExportCanvas(index, stats) {
     const artboard = doc.artboards[0];
-    const destFile = new File('~/Desktop/popcorns/' + 'something' + '.png');
+    const destFile = new File('~/Desktop/final/' + index + ',' + stats + '.png');
     const options = new ImageCaptureOptions();
     options.artBoardClipping = true;
     options.resolution = 1500;

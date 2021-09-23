@@ -1,12 +1,31 @@
 #include params.js
 
-function CreateName(traits, spots, color, eye) {
+function GetCharStats(traits, spots, color, eye) {
     const rarity = GetRarity(traits, spots);
     const colorName = GetColorName(color, traits);
     const expression = GetExpression(eye, traits);
     const fullName = expression + ' ' + colorName;
 
-    return [rarity, colorName, expression, fullName, traits.pattern];
+    const additionalTraits = [];
+
+    if (traits.legsState[0] == 'left_silly_running' || traits.legsState[0] == 'left_running' || traits.legsState[1] == 'right_running') additionalTraits.push('Running');
+    else additionalTraits.push('Standing');
+    
+    if (traits.legsState[0] == 'left_silly_running') additionalTraits.push('Silly running');
+    else additionalTraits.push('Not silly running');
+    
+    if (traits.poseState == 'pose1') additionalTraits.push('Idle');
+    else if (traits.poseState == 'pose2') additionalTraits.push('Looking back');
+    else if (traits.poseState == 'pose3') additionalTraits.push('Hunting');
+    
+    if (traits.mouthState == 'jaw_closed') additionalTraits.push('Closed mouth');
+    else if (traits.mouthState == 'jaw_normal') additionalTraits.push('Opened mouth');
+    else if (traits.mouthState == 'jaw_roar') additionalTraits.push('Roaring');
+    
+    if (traits.scarfState) additionalTraits.push('Tammed');
+    else additionalTraits.push('Untammed')
+
+    return [fullName, rarity, colorName, expression, traits.pattern, additionalTraits];
 }
 
 function GetExpression(eye, traits) {
@@ -139,15 +158,15 @@ function GetExpression(eye, traits) {
 
 function GetRarity(traits, spots) {
     if (traits.pattern == 'sin' && traits.scarfState && spots > 2) return 'Epic';
-    else if ((traits.pattern == 'sin' && traits.scarfState) || (spots > 2 && traits.scarfState) || (spots > 2 && traits.pattern == 'sin')) return 'Legendary';
-    else if (traits.pattern == 'sin' || traits.scarfState || spots == 0) return 'Very Rare';
+    else if ((traits.pattern == 'Sin pattern' && traits.scarfState) || (spots > 2 && traits.scarfState) || (spots > 2 && traits.pattern == 'Sin pattern')) return 'Legendary';
+    else if (traits.pattern == 'Sin pattern' || traits.scarfState || spots == 'None') return 'Very Rare';
     else if (traits.mouthState == 'jaw_roar') return 'Rare';
     else if (spots > 1) return 'Uncommon';
     else return 'Common';
 }
 
 function GetColorName(color, traits) {
-    if(traits.pattern == 'sin') return 'Psychedelic';
+    if(traits.pattern == 'Sin pattern') return 'Psychedelic';
     const hex = ConvertRGBToHex(color.red, color.green, color.blue);
     return ntc.name(hex)[1];
 }

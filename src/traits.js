@@ -77,10 +77,10 @@ function GetScarf() {
 function GetPattern() {
     const rand = Math.random();
 
-    if (isSin >= rand) return ['sin', isSinChance];
-    else if (isCookie >= rand) return ['cookie', isCookieChance];
-    else if (isVert >= rand) return ['vertical', isVertChance];
-    else if (isHori >= rand) return ['horizontal', isHoriChance];
-    else if (rand < 0.025) return ['none', 0.025];
-    else return ['egg', isEggChance];
+    if (isSin >= rand) return ['Sin pattern', isSinChance];
+    else if (isCookie >= rand) return ['Cookie pattern', isCookieChance];
+    else if (isVert >= rand) return ['Vertical pattern', isVertChance];
+    else if (isHori >= rand) return ['Horizontal pattern', isHoriChance];
+    else if (rand < 0.025) return ['None', 0.025];
+    else return ['Egg pattern', isEggChance];
 }
